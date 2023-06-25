@@ -9,7 +9,7 @@ const HomeScreen = ({navigation}) => {
     <ScrollView style={styles.MainContainer}>
       <View style={styles.WelcomeBar}>
         <WelcomeBar
-          userName={'Marawan'}
+          userName={'Abdo'}
           onUserIconPress={() => navigation.navigate('User')}
         />
       </View>
