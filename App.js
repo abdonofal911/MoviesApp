@@ -15,14 +15,14 @@ const Tab = createMaterialBottomTabNavigator();
 
 const App = () => {
   return (
-    <View style={{flex: 1 , backgroundColor : '#0f111d'}}>
+    <View style={{flex: 1, backgroundColor: '#0f111d'}}>
       <NavigationContainer>
         <Tab.Navigator
-          backgroundColor={backgroundColor ='0f111d'}
+          backgroundColor={(backgroundColor = '0f111d')}
           initialRouteName="Home"
           activeColor="#f0edf6"
           inactiveColor="#f4f1f8"
-          barStyle={{backgroundColor : '#292b37'}}>
+          barStyle={{backgroundColor: '#292b37'}}>
           <Tab.Screen
             name="Home"
             component={HomeScreen}

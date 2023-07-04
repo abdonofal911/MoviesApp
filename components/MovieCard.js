@@ -1,33 +1,33 @@
 import React from 'react';
 
-import {
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ScrollView,
-} from 'react-native';
+import {Pressable, StyleSheet, View, Image, ScrollView, Dimensions} from 'react-native';
 
-const MovieCard = () => {
-  const imageSource = {
-    uri: '../assets/Images/MovieImage.jpeg',
-    width: 100,
-    height: 100,
-  };
+const MovieCard = ({imageStyle}) => {
   return (
-    <Pressable style={styles.ImageContainer}>
-      <Image source={imageSource} />
-    </Pressable>
+      <Image
+        source={{
+          uri: 'https://www.vintagemovieposters.co.uk/wp-content/uploads/2017/10/IMG_8729-1-636x471.jpg',
+        }}
+        style={imageStyle}
+      />
   );
 };
 
 export default MovieCard;
 
 const styles = StyleSheet.create({
-  ImageContainer: {
-    width: '80%',
-    height: 100,
+  card: {
+    width: 200,
+    height: 200,
+    borderRadius: 10,
+    backgroundColor: 'black',
+    margin: 5,
   },
-  Image: {width: '80%', height: 100},
+  image: {
+    width: Dimensions.get('screen').width*0.85,
+    height: 200,
+    backgroundColor: 'gray',
+    resizeMode: 'cover',
+    borderRadius : 15 , 
+  },
 });

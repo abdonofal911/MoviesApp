@@ -1,8 +1,11 @@
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, FlatList, Dimensions} from 'react-native';
 //import SearchBar from '../components/SearchBar';
-import {SearchBar} from '@rneui/themed';
+import {Image, SearchBar} from '@rneui/themed';
 import WelcomeBar from '../components/WelcomeBar';
 import UpComingMovies from '../components/UpComingMovies';
+import SectionTitle from '../components/SectionTitle';
+import MovieCard from '../components/MovieCard';
+import Card from '../components/Card';
 
 const HomeScreen = ({navigation}) => {
   return (
@@ -20,7 +23,31 @@ const HomeScreen = ({navigation}) => {
           placeholder={'Search'}
         />
       </View>
-      <UpComingMovies />
+      <SectionTitle titleText="Upcoming Movies" ButtonTitle="View all" />
+      <FlatList
+        data={[0, 1, 2, 3]}
+        renderItem={({item}) => (
+          <MovieCard imageStyle={styles.imageStyle} />
+        )}
+        horizontal
+        keyExtractor={(item, index) => index.toString()}
+        ItemSeparatorComponent={() => <View style={styles.separator} />}
+        contentContainerStyle={styles.flatList} 
+         showsHorizontalScrollIndicator = {false} 
+      />
+      <SectionTitle titleText="New Movies" ButtonTitle="View all" />
+      <FlatList 
+      data={[0, 1, 2, 3]}
+        renderItem={({item}) => (
+          <Card />
+        )}
+        horizontal
+        keyExtractor={(item, index) => index.toString()}
+        ItemSeparatorComponent={() => <View style={styles.separator} />}
+        contentContainerStyle={styles.flatList} 
+         showsHorizontalScrollIndicator = {false}
+      />
+
     </ScrollView>
   );
 };
@@ -31,6 +58,12 @@ const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
   },
+  flatList: {
+    padding: 8,
+  },
+  separator: {
+    width: 8,
+  },
   WelcomeBar: {
     padding: 6,
     marginLeft: 6,
@@ -40,5 +73,17 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     padding: 6,
+  },
+  image: {
+    width: 200,
+    height: 200,
+    resizeMode: 'cover',
+  },
+  imageStyle: {
+    width: Dimensions.get('screen').width*0.85,
+    height: 200,
+    backgroundColor: 'gray',
+    resizeMode: 'cover',
+    borderRadius : 15 , 
   },
 });

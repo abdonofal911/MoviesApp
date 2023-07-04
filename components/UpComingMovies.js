@@ -8,8 +8,8 @@ import { Card } from 'react-native-paper';
 const UpComingMovies = () => {
   return (
     <View>
-    <SectionTitle titleText='Upcoming Movies' ButtonTitle='View all' /> 
     <Card/>
+    
     </View>
   )
 }
