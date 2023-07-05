@@ -8,7 +8,12 @@ const CategoryCard = () => {
     <View style={styles.container}>
       <MovieCard imageStyle={styles.image} />
       <Text style={styles.title}>Categoty Title</Text>
-      <Icon name="navigate-next" size={32} color="black" onPress={()=>console.log('Showing selected Category')} />
+      <Icon
+        name="navigate-next"
+        size={32}
+        color="black"
+        onPress={() => console.log('Showing selected Category')}
+      />
     </View>
   );
 };
@@ -36,6 +41,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     justifyContent: 'center',
     padding: 6,
-    flex : 1
+    flex: 1,
   },
 });

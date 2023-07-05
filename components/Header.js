@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Header = ({HeaderTitle, backPress , iconName}) => {
+const Header = ({HeaderTitle, backPress, iconName}) => {
   return (
     <View style={styles.HeaderContainer}>
       <Text style={styles.Text}>{HeaderTitle}</Text>

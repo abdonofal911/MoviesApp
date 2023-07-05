@@ -11,7 +11,7 @@ import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 import IconFontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import {View} from 'react-native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 const Tab = createMaterialBottomTabNavigator();
 
 const Stack = createNativeStackNavigator();

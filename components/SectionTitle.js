@@ -2,7 +2,7 @@ import {Button} from '@rneui/base';
 import React from 'react';
 import {ScrollView, View, Text, StyleSheet} from 'react-native';
 
-const SectionTitle = ({titleText, ButtonTitle , ButtonPress}) => {
+const SectionTitle = ({titleText, ButtonTitle, ButtonPress}) => {
   return (
     <View style={styles.TitleContainer}>
       <View>

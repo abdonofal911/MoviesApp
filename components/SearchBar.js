@@ -7,7 +7,9 @@ const SearchBar = () => {
       <TextInput
         style={styles.input}
         placeholder="Search"
-        onChangeText={(text) => {console.log(text)}}
+        onChangeText={text => {
+          console.log(text);
+        }}
       />
     </View>
   );

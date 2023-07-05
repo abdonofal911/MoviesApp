@@ -1,4 +1,11 @@
-import {StyleSheet, Text, View, ScrollView, FlatList, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  FlatList,
+  Dimensions,
+} from 'react-native';
 //mport {Image, SearchBar} from '@rneui/themed';
 import WelcomeBar from '../components/WelcomeBar';
 import UpComingMovies from '../components/UpComingMovies';
@@ -16,36 +23,39 @@ const HomeScreen = ({navigation}) => {
           onUserIconPress={() => navigation.navigate('User')}
         />
       </View>
-        <SearchBar
-          containerStyle={{borderRadius: 8}}
-          onSubmit={() => {}}
-          placeholder={'Search'}
-        />
-      <SectionTitle titleText="Upcoming Movies" ButtonTitle="View all" ButtonPress={()=>navigation.navigate('Categories')} />
+      <SearchBar
+        containerStyle={{borderRadius: 8}}
+        onSubmit={() => {}}
+        placeholder={'Search'}
+      />
+      <SectionTitle
+        titleText="Upcoming Movies"
+        ButtonTitle="View all"
+        ButtonPress={() => navigation.navigate('Categories')}
+      />
       <FlatList
         data={[0, 1, 2, 3]}
-        renderItem={({item}) => (
-          <MovieCard imageStyle={styles.imageStyle} />
-        )}
+        renderItem={({item}) => <MovieCard imageStyle={styles.imageStyle} />}
         horizontal
         keyExtractor={(item, index) => index.toString()}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
-        contentContainerStyle={styles.flatList} 
-         showsHorizontalScrollIndicator = {false} 
+        contentContainerStyle={styles.flatList}
+        showsHorizontalScrollIndicator={false}
       />
-      <SectionTitle titleText="New Movies" ButtonTitle="View all" ButtonPress={()=>navigation.navigate('Categories')} />
-      <FlatList 
-      data={[0, 1, 2, 3]}
-        renderItem={({item}) => (
-          <Card />
-        )}
+      <SectionTitle
+        titleText="New Movies"
+        ButtonTitle="View all"
+        ButtonPress={() => navigation.navigate('Categories')}
+      />
+      <FlatList
+        data={[0, 1, 2, 3]}
+        renderItem={({item}) => <Card />}
         horizontal
         keyExtractor={(item, index) => index.toString()}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
-        contentContainerStyle={styles.flatList} 
-         showsHorizontalScrollIndicator = {false}
+        contentContainerStyle={styles.flatList}
+        showsHorizontalScrollIndicator={false}
       />
-
     </ScrollView>
   );
 };
@@ -78,10 +88,10 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   imageStyle: {
-    width: Dimensions.get('screen').width*0.85,
+    width: Dimensions.get('screen').width * 0.85,
     height: 200,
     backgroundColor: 'gray',
     resizeMode: 'cover',
-    borderRadius : 15 , 
+    borderRadius: 15,
   },
 });
