@@ -2,10 +2,9 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Header = ({HeaderTitle}) => {
+const Header = ({HeaderTitle, backPress , iconName}) => {
   return (
     <View style={styles.HeaderContainer}>
-      <Icon name="arrow-back" size={36} onPress={() => console.log('GoBack')} />
       <Text style={styles.Text}>{HeaderTitle}</Text>
     </View>
   );
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
   },
   Text: {
     justifyContent: 'center',
-    fontSize: 36,
+    fontSize: 32,
     paddingLeft: 24,
     marginTop: 0,
   },

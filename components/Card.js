@@ -15,7 +15,12 @@ const Card = () => {
           justifyContent: 'flex-start',
           alignItems: 'center',
         }}>
-        <Icon name="star" size={22} color="yellow" style={{marginLeft: 10}} />
+        <Icon
+          name="star"
+          size={18}
+          color="yellow"
+          style={{marginLeft: 10, paddingBottom: 8}}
+        />
         <Text style={styles.rate}>8.5</Text>
       </View>
     </View>
@@ -49,5 +54,5 @@ const styles = StyleSheet.create({
   },
   title: {fontSize: 18, marginLeft: 2, fontWeight: 'bold'},
   category: {fontSize: 15, marginLeft: 8},
-  rate: {fontSize: 14, marginLeft: 8},
+  rate: {fontSize: 14, marginLeft: 8, paddingBottom: 8},
 });

@@ -11,19 +11,22 @@ import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 import IconFontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import {View} from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Tab = createMaterialBottomTabNavigator();
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
     <View style={{flex: 1, backgroundColor: '#0f111d'}}>
       <NavigationContainer>
-        <Tab.Navigator
+        <Stack.Navigator
           backgroundColor={(backgroundColor = '0f111d')}
           initialRouteName="Home"
           activeColor="#f0edf6"
           inactiveColor="#f4f1f8"
           barStyle={{backgroundColor: '#292b37'}}>
-          <Tab.Screen
+          <Stack.Screen
             name="Home"
             component={HomeScreen}
             options={{
@@ -32,7 +35,7 @@ const App = () => {
               ),
             }}
           />
-          <Tab.Screen
+          <Stack.Screen
             name="Categories"
             component={CategoriesScreen}
             options={{
@@ -41,7 +44,7 @@ const App = () => {
               ),
             }}
           />
-          <Tab.Screen
+          <Stack.Screen
             name="Favourites"
             component={FavouritesScreen}
             options={{
@@ -50,7 +53,7 @@ const App = () => {
               ),
             }}
           />
-          <Tab.Screen
+          <Stack.Screen
             name="User"
             component={UserProfileScreen}
             options={{
@@ -59,7 +62,7 @@ const App = () => {
               ),
             }}
           />
-        </Tab.Navigator>
+        </Stack.Navigator>
       </NavigationContainer>
     </View>
   );

@@ -1,11 +1,11 @@
 import {StyleSheet, Text, View, ScrollView, FlatList, Dimensions} from 'react-native';
-//import SearchBar from '../components/SearchBar';
-import {Image, SearchBar} from '@rneui/themed';
+//mport {Image, SearchBar} from '@rneui/themed';
 import WelcomeBar from '../components/WelcomeBar';
 import UpComingMovies from '../components/UpComingMovies';
 import SectionTitle from '../components/SectionTitle';
 import MovieCard from '../components/MovieCard';
 import Card from '../components/Card';
+import SearchBar from '../components/SearchBar';
 
 const HomeScreen = ({navigation}) => {
   return (
@@ -16,14 +16,12 @@ const HomeScreen = ({navigation}) => {
           onUserIconPress={() => navigation.navigate('User')}
         />
       </View>
-      <View style={styles.SearchBar}>
         <SearchBar
           containerStyle={{borderRadius: 8}}
           onSubmit={() => {}}
           placeholder={'Search'}
         />
-      </View>
-      <SectionTitle titleText="Upcoming Movies" ButtonTitle="View all" />
+      <SectionTitle titleText="Upcoming Movies" ButtonTitle="View all" ButtonPress={()=>navigation.navigate('Categories')} />
       <FlatList
         data={[0, 1, 2, 3]}
         renderItem={({item}) => (
@@ -35,7 +33,7 @@ const HomeScreen = ({navigation}) => {
         contentContainerStyle={styles.flatList} 
          showsHorizontalScrollIndicator = {false} 
       />
-      <SectionTitle titleText="New Movies" ButtonTitle="View all" />
+      <SectionTitle titleText="New Movies" ButtonTitle="View all" ButtonPress={()=>navigation.navigate('Categories')} />
       <FlatList 
       data={[0, 1, 2, 3]}
         renderItem={({item}) => (

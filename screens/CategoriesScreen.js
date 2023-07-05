@@ -3,10 +3,13 @@ import Header from '../components/Header';
 import {FlatList} from 'react-native';
 import CategoryCard from '../components/CategoryCard';
 
-const CategoriesScreen = () => {
+const CategoriesScreen = ({navigation}) => {
   return (
     <View style={styles.MainContainer}>
-      <Header HeaderTitle={'Discover'} />
+      <Header
+        HeaderTitle={'Discover'}
+        backPress={() => navigation.navigate('Home')}
+      />
       <View style={styles.MainContainer}>
         <FlatList
           data={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
@@ -24,7 +27,7 @@ export default CategoriesScreen;
 
 const styles = StyleSheet.create({
   MainContainer: {
-    flex: 7,
+    flex: 12,
   },
   flatList: {
     padding: 8,

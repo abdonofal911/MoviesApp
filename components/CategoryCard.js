@@ -8,7 +8,7 @@ const CategoryCard = () => {
     <View style={styles.container}>
       <MovieCard imageStyle={styles.image} />
       <Text style={styles.title}>Categoty Title</Text>
-      <Icon name="navigate-next" size={32} color="black" />
+      <Icon name="navigate-next" size={32} color="black" onPress={()=>console.log('Showing selected Category')} />
     </View>
   );
 };
@@ -18,7 +18,7 @@ export default CategoryCard;
 const styles = StyleSheet.create({
   image: {
     width: Dimensions.get('screen').width * 0.3,
-    height: 75,
+    height: Dimensions.get('screen').height * 0.085,
     backgroundColor: 'gray',
     resizeMode: 'cover',
     borderRadius: 15,
@@ -36,5 +36,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     justifyContent: 'center',
     padding: 6,
+    flex : 1
   },
 });

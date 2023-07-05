@@ -2,7 +2,7 @@ import {Button} from '@rneui/base';
 import React from 'react';
 import {ScrollView, View, Text, StyleSheet} from 'react-native';
 
-const SectionTitle = ({titleText, ButtonTitle}) => {
+const SectionTitle = ({titleText, ButtonTitle , ButtonPress}) => {
   return (
     <View style={styles.TitleContainer}>
       <View>
@@ -13,6 +13,7 @@ const SectionTitle = ({titleText, ButtonTitle}) => {
           title={ButtonTitle}
           type="clear"
           titleStyle={{color: '#6e6e78'}}
+          onPress={ButtonPress}
         />
       </View>
     </View>
