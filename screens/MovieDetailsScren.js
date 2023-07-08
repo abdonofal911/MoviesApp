@@ -48,7 +48,7 @@ const MovieDetailsScren = ({navigation}) => {
         <View style={styles.buttonsContainer}>
           <Icon
             name="add-circle-outline"
-            color={'white'}
+            color={'black'}
             size={42}
             onPress={() => {
               console.log('Adding to the list');
@@ -56,7 +56,7 @@ const MovieDetailsScren = ({navigation}) => {
           />
           <Icon
             name="heart-outline"
-            color={'white'}
+            color={'black'}
             size={42}
             onPress={() => {
               console.log('Added To Favorite');
@@ -64,7 +64,7 @@ const MovieDetailsScren = ({navigation}) => {
           />
           <Icon
             name="arrow-down-circle-outline"
-            color={'white'}
+            color={'black'}
             size={42}
             onPress={() => {
               console.log('Downloading');
@@ -72,7 +72,7 @@ const MovieDetailsScren = ({navigation}) => {
           />
           <Icon
             name="share-outline"
-            color={'white'}
+            color={'black'}
             size={42}
             onPress={() => {
               console.log('Shareing');
@@ -137,7 +137,6 @@ const styles = StyleSheet.create({
     right: 175,
   },
   details: {
-    backgroundColor: 'gray',
     width: Dimensions.get('screen').width * 1,
     height: Dimensions.get('screen').height * 0.65,
     position: 'absolute',
