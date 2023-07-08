@@ -10,58 +10,25 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 import IconFontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-import {View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import MovieDetailsScren from './screens/MovieDetailsScren';
 const Tab = createMaterialBottomTabNavigator();
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <View style={{flex: 1, backgroundColor: '#0f111d'}}>
+    <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator
-          backgroundColor={(backgroundColor = '0f111d')}
           initialRouteName="Home"
-          activeColor="#f0edf6"
-          inactiveColor="#f4f1f8"
-          barStyle={{backgroundColor: '#292b37'}}>
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{
-              tabBarIcon: ({tintColor}) => (
-                <Icon name="home-outline" size={24} color="black" />
-              ),
-            }}
-          />
-          <Stack.Screen
-            name="Categories"
-            component={CategoriesScreen}
-            options={{
-              tabBarIcon: ({tintColor}) => (
-                <IconMaterial name="category" size={24} color="black" />
-              ),
-            }}
-          />
-          <Stack.Screen
-            name="Favourites"
-            component={FavouritesScreen}
-            options={{
-              tabBarIcon: ({tintColor}) => (
-                <IconMaterial name="favorite-outline" size={24} color="black" />
-              ),
-            }}
-          />
-          <Stack.Screen
-            name="User"
-            component={UserProfileScreen}
-            options={{
-              tabBarIcon: ({tintColor}) => (
-                <IconFontAwesome5 name="user-alt" size={24} color="black" />
-              ),
-            }}
-          />
+          screenOptions={{headerShown: false}}>
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Categories" component={CategoriesScreen} />
+          <Stack.Screen name="Favourites" component={FavouritesScreen} />
+          <Stack.Screen name="User" component={UserProfileScreen} />
+          <Stack.Screen name="MovieDetails" component={MovieDetailsScren} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
@@ -69,3 +36,10 @@ const App = () => {
 };
 
 export default App;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+});

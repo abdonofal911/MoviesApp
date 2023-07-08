@@ -1,15 +1,24 @@
 import React from 'react';
 
-import {Pressable, StyleSheet, View, Image, ScrollView, Dimensions} from 'react-native';
+import {
+  Pressable,
+  StyleSheet,
+  View,
+  Image,
+  ScrollView,
+  Dimensions,
+} from 'react-native';
 
-const MovieCard = ({imageStyle}) => {
+const MovieCard = ({imageStyle, CoverPress}) => {
   return (
+    <Pressable onPress={CoverPress}>
       <Image
-        source={{
-          uri: 'https://www.vintagemovieposters.co.uk/wp-content/uploads/2017/10/IMG_8729-1-636x471.jpg',
-        }}
+      source={{
+        uri: 'https://www.vintagemovieposters.co.uk/wp-content/uploads/2017/10/IMG_8729-1-636x471.jpg',
+      }}
         style={imageStyle}
       />
+    </Pressable>
   );
 };
 
@@ -24,10 +33,10 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   image: {
-    width: Dimensions.get('screen').width*0.85,
+    width: Dimensions.get('screen').width * 0.85,
     height: 200,
     backgroundColor: 'gray',
     resizeMode: 'cover',
-    borderRadius : 15 , 
+    borderRadius: 15,
   },
 });

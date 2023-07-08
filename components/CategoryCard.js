@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   container: {
-    flex: 1,
     flexDirection: 'row',
     padding: 2,
     alignItems: 'center',
@@ -37,10 +36,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    alignItems: 'center',
-    textAlign: 'center',
-    justifyContent: 'center',
-    padding: 6,
+    paddingLeft: 8,
     flex: 1,
   },
 });

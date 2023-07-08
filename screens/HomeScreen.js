@@ -35,7 +35,7 @@ const HomeScreen = ({navigation}) => {
       />
       <FlatList
         data={[0, 1, 2, 3]}
-        renderItem={({item}) => <MovieCard imageStyle={styles.imageStyle} />}
+        renderItem={({item}) => <MovieCard imageStyle={styles.imageStyle} CoverPress={()=>navigation.navigate('MovieDetails')}/>}
         horizontal
         keyExtractor={(item, index) => index.toString()}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
@@ -49,7 +49,7 @@ const HomeScreen = ({navigation}) => {
       />
       <FlatList
         data={[0, 1, 2, 3]}
-        renderItem={({item}) => <Card />}
+        renderItem={({item}) => <Card CardPress={()=>navigation.navigate('MovieDetails')} />}
         horizontal
         keyExtractor={(item, index) => index.toString()}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
@@ -65,6 +65,7 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
+    backgroundColor : 'white'
   },
   flatList: {
     padding: 8,

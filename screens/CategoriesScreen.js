@@ -9,6 +9,7 @@ const CategoriesScreen = ({navigation}) => {
       <Header
         HeaderTitle={'Discover'}
         backPress={() => navigation.navigate('Home')}
+        primaryIcon={'arrow-back'}
       />
       <View style={styles.MainContainer}>
         <FlatList
@@ -27,7 +28,8 @@ export default CategoriesScreen;
 
 const styles = StyleSheet.create({
   MainContainer: {
-    flex: 12,
+    flex: 12, 
+     backgroundColor : 'white'
   },
   flatList: {
     padding: 8,

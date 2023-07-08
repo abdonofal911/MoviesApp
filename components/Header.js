@@ -2,10 +2,16 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Header = ({HeaderTitle, backPress, iconName}) => {
+const Header = ({HeaderTitle, backPress, primaryIcon, secondaryIcon , secondaryPress}) => {
   return (
     <View style={styles.HeaderContainer}>
+      <Icon name={primaryIcon} size={36} onPress={backPress} />
       <Text style={styles.Text}>{HeaderTitle}</Text>
+      <Icon
+        name={secondaryIcon}
+        size={36}
+        onPress={secondaryPress}
+      />
     </View>
   );
 };
@@ -13,11 +19,10 @@ const Header = ({HeaderTitle, backPress, iconName}) => {
 export default Header;
 const styles = StyleSheet.create({
   HeaderContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    marginTop: 6,
-    marginLeft: 2,
+    flex: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin : 8 , 
     alignItems: 'baseline',
   },
   Text: {

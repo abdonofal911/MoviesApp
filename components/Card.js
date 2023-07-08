@@ -1,29 +1,38 @@
 import React from 'react';
-import {StyleSheet, Text, View, ScrollView, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Dimensions,
+  Pressable,
+} from 'react-native';
 import MovieCard from './MovieCard';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Card = () => {
+const Card = ({CardPress}) => {
   return (
-    <View style={styles.container}>
-      <MovieCard imageStyle={styles.image} />
-      <Text style={styles.title}> Movie Title</Text>
-      <Text style={styles.category}>Category</Text>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-        }}>
-        <Icon
-          name="star"
-          size={18}
-          color="yellow"
-          style={{marginLeft: 10, paddingBottom: 8}}
-        />
-        <Text style={styles.rate}>8.5</Text>
+    <Pressable onPress={CardPress}>
+      <View style={styles.container}>
+        <MovieCard imageStyle={styles.image} />
+        <Text style={styles.title}> Return of The King</Text>
+        <Text style={styles.category}>Action , +18 </Text>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+          }}>
+          <Icon
+            name="star"
+            size={18}
+            color="yellow"
+            style={{marginLeft: 10, paddingBottom: 8}}
+          />
+          <Text style={styles.rate}>9.8</Text>
+        </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
